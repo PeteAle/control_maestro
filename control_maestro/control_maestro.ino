@@ -6,6 +6,8 @@
 #define 
 
 int addr = 0;
+char inicio = '<'
+char fin = '>'
 
 // Constantes del control 1
 float kp1 = 0;
@@ -52,8 +54,33 @@ void loop() {
 }
 
 void enviarDatos(float kp1, ki1, kd1, kp2, ki2, kd2, kp3, ki3, kd3, kp4, ki4, kd4, kp5, ki5, kd5, kp6, ki6, kd6) {
-  
-
+  // String de inicio del conjunto de datos
+  Serial.write(inicio);
+  // Constantes PID 1
+  Serial.write(kp1);
+  Serial.write(ki1);
+  Serial.write(kd1);
+  // Constantes PID 2
+  Serial.write(kp2);
+  Serial.write(ki2);
+  Serial.write(kd2);
+  //Constantes PID 3
+  Serial.write(kp3);
+  Serial.write(ki3);
+  Serial.write(kd3);
+  // Constantes PID 4
+  Serial.write(kp4);
+  Serial.write(ki4);
+  Serial.write(kd4);
+  // Constantes PID 5
+  Serial.write(kp5);
+  Serial.write(ki5);
+  Serial.write(kd5);
+  // Constantes PID 6
+  Serial.write(kp6);
+  Serial.write(ki6);
+  Serial.write(kd6);
+  // String de finalización del conjunto de datos.
 }
 
 void eepromWrite(int addr, float val){
